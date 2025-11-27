@@ -1,110 +1,201 @@
-
-
+/* --- CONFIGURACIÓN GENERAL --- */
 body {
-    /* Aplicamos el color aquí para no repetirlo en cada etiqueta */
-    color: darkblue;
-    font-family: Arial, sans-serif; /* Buena práctica agregar una fuente */
+    /* Fondo gris suave para que resalte la "hoja" del informe */
+    background-color: #f4f4f9;
+    /* Texto gris oscuro (no negro puro) para lectura cómoda */
+    color: #333; 
+    /* Fuente moderna y limpia */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Espaciado entre lineas */
 }
 
-/* Enlaces y decoraciones generales */
+/* Enlaces */
 a {
     text-decoration: none;
-    color: darkblue;
+    color: #0056b3; /* Azul profesional */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #003d82; /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline;
 }
 
-/* Títulos Generales */
+/* --- TÍTULOS --- */
+/* Quitamos el subrayado antiguo y ponemos colores sólidos */
 h1, h2, h3 {
-    text-align: center;
-    margin: 10px auto;
+    color: #004085; /* Azul oscuro corporativo */
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
-h1 { font-size: 50px; }
-h2 { font-size: 35px; text-decoration: underline; }
-h3 { font-size: 25px; text-decoration: underline; }
+h1 { 
+    font-size: 42px; 
+    text-align: center;
+    text-transform: uppercase; /* Mayúsculas elegantes */
+    letter-spacing: 1px;
+}
 
-/* Párrafos y Listas */
+h2 { 
+    font-size: 30px; 
+    border-bottom: 2px solid #0056b3; /* Línea azul debajo del título */
+    padding-bottom: 5px;
+    text-align: left; /* Títulos de sección a la izquierda se ven más ordenados */
+}
+
+h3 { 
+    font-size: 24px; 
+    color: #0056b3;
+    text-align: left;
+}
+
+/* --- TEXTO Y LISTAS --- */
 p, ul, li, dl, ol, dd {
-    font-size: 20px; /* Tamaño base */
+    font-size: 18px; 
+    margin-bottom: 15px;
 }
 
 dt {
-    font-size: 20px;
-    text-decoration: underline;
+    font-size: 19px;
+    color: #004085;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 /* --- SECCIONES ESPECÍFICAS --- */
 
+/* --- SECCIONES ESPECÍFICAS MEJORADAS --- */
+
+/* --- PORTADA BLANCA Y LIMPIA --- */
+
 #portada {
+    /* 1. Fondo totalmente blanco */
+    background: #ffffff; 
+    
+    /* 2. Alineación forzada al centro */
     text-align: center;
-    padding: 20px;
+    display: flex;       /* Truco moderno para alinear mejor */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Espaciado */
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    
+    /* Línea decorativa abajo (opcional, si no te gusta bórrala) */
+    border-bottom: 5px solid #002244; 
+}
+
+/* --- ESTILO DE LOS TEXTOS DE PORTADA --- */
+/* Aquí aplicamos el "mismo color" para todos */
+
+#portada h1, 
+#portada h2, 
+#portada h3, 
+#portada p {
+    /* Color Gris Oscuro (Casi negro) para que contraste con el blanco */
+    color: #333333 !important; 
+    
+    /* Quitamos sombras y efectos raros */
+    text-shadow: none;
+    text-align: center;
+    margin: 15px auto; /* Separación entre renglones */
+    width: 100%; /* Asegura que ocupen el ancho para centrarse */
+}
+
+/* Diferenciamos solo por tamaño (Jerarquía) */
+#portada h1 {
+    font-size: 28px;
+    font-weight: 800; /* Negrita fuerte */
+    text-transform: uppercase;
+}
+
+#portada h2 {
+    font-size: 22px;
+    font-weight: 600; /* Negrita media */
+}
+
+#portada h3 {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic; /* Cursiva para que se vea elegante */
+}
+
+#portada p {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #titulo {
-    text-align: center;
-    font-size: 50px;
-    text-decoration: solid underline;
-    margin-bottom: 20px;
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 #contenido {
-    /* En PC mantenemos tus márgenes anchos */
-    margin-left: 20%;
-    margin-right: 20%;
+    /* ESTILO TIPO "HOJA DE PAPEL" */
+    background-color: white;
+    max-width: 900px; /* Ancho máximo ideal para lectura */
+    margin: 0 auto;   /* Centrado automático */
+    padding: 40px;    /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* Sombra suave */
     text-align: justify;
-    line-height: 1.6; /* Hace que el texto sea más fácil de leer */
+    margin-bottom: 50px;
+}
+
+/* --- CÓDIGO (NUEVO: Para tu proyecto Arduino) --- */
+pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 16px;
+    border-left: 5px solid #0056b3;
 }
 
 /* --- IMÁGENES Y VIDEO --- */
-img, video {
+img, video, iframe {
     display: block;
-    margin: 20px auto; /* Un poco de espacio vertical */
-    /* En PC ocuparán el 50%, pero nunca más del 100% del ancho disponible */
-    width: 70%; 
-    max-width: 120%; 
-    height: auto; /* Mantiene la proporción correcta */
+    margin: 30px auto;
+    width: 80%;       /* Tamaño estándar */
+    max-width: 100%;  /* NUNCA más del 100% (arregla tu error de 120%) */
+    height: auto;
+    border-radius: 8px; /* Bordes suaves en las fotos */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para que "floten" */
 }
+
 iframe {
-    display: block;
-    margin: 20px auto; /* Un poco de espacio vertical */
-    /* En PC ocuparán el 50%, pero nunca más del 100% del ancho disponible */
-    width: 70%; 
-    max-width: 120%; 
-    height: 600px; 
+    height: 500px;
 }
 
-
-
-/* Si la pantalla es menor a 768px (Tablets y Celulares) */
+/* --- RESPONSIVE (CELULARES) --- */
 @media (max-width: 768px) {
-
-    /* 1. Aprovechamos más el ancho de la pantalla */
-    #contenido {
-        margin-left: 5%;  /* Reducimos márgenes laterales */
-        margin-right: 5%;
-    }
-
-    /* 2. Las imágenes crecen para verse bien en pantallas chicas */
-    img, video, iframe {
-        width: 90%; /* En celular ocupan casi todo el ancho */
-    }
-
-    /* 3. Achicamos los textos gigantes para que no rompan el diseño */
-    h1, #titulo {
-        font-size: 32px; /* Reducido de 50px */
-    }
-
-    h2 {
-        font-size: 26px; /* Reducido de 35px */
-    }
     
-    h3 {
-        font-size: 22px;
+    #contenido {
+        width: 90%;     /* Ocupa casi toda la pantalla */
+        padding: 20px;  /* Menos relleno */
+        margin-top: -20px; /* Sube un poco sobre la portada */
     }
+}
 
-    p, li, dd, dt {
-        font-size: 18px; /* Ligeramente más pequeño para lectura móvil */
-    }
+    /* --- CLASE ESPECIAL PARA LOGOS/ESCUDOS EN PORTADA --- */
+.logo-portada {
+    display: block;
+    margin: 30px auto; /* Centrado con espacio arriba y abajo */
+    /* ANCHO: Ocupa el 100% del espacio disponible, PERO... */
+    width: 100%;
+    /* ... NUNCA será más ancho de 250 pixeles. Esto es la clave. */
+    max-width: 250px; 
+    height: auto; /* Mantiene la proporción para no deformarse */
+    
+    /* Quitamos estilos de las fotos normales que no quedan bien en logos */
+    border-radius: 0; 
+    box-shadow: none; 
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3)); /* Sombra que sigue la forma del escudo */
 }
