@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Proyecto de Robótica</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+
+    <section id="portada">
+        <h3>INSTITUTO DE ENSEÑANZA SUPERIOR Nº 6023</h3>
+        <h3>“DR. ALFREDO LOUTAIF”</h3>
+        <h3>TECNICATURA SUPERIOR EN ANÁLISIS DE SISTEMAS Y DESARROLLO DE SOFTWARE</h3>
+
+        <h2>ROBÓTICA Y AUTOMATIZACIÓN</h2>
+
+        <img src="imagenes\logo2.jpeg" alt="Portada" width="300" height="600"><br><br>
+
+        <h3>Profesor: José Mauro Emanuel Cerezo</h3>
+        <h3>Alumna: Carina Abigail Ledesma</h3>
+
+        <br>
+
+        <h2>2025</h2>
+    
+    
+    </section>
+
+    <section id="titulo">
+        <h1>SenTech: sistema de monitoreo y protección residencial</h1>
+    </section>
+
+    <section id="contenido">
+        <h2>Introducción</h2>
+        <p>La motivación principal para el desarrollo de este proyecto surge de una problemática
+            recurrente y trágica que afecta a nuestra sociedad año tras año: el aumento de accidentes
+            domésticos fatales durante la época invernal. Gran parte de estos incidentes se deben
+            a la inhalación de monóxido de carbono y otros gases tóxicos emanados por estufas, braseros
+            o sistemas de calefacción defectuosos. Estas "amenazas sileciosas" suelen cobrar víctimas
+            porque son dificiles de detectar por los sentidos humanos antes de que sea demasiado tarde.
+        </p> 
+        <p>Para dar respuesta a esta necesidad vital nace <strong>SENTECH: sistema de monitoreo y 
+            proteccion residencial</strong>. Su próposito original es actuar como una barrera de defensa
+            tecnológica, capaz de identificar la presencia de gases peligrosos producto de una mala combustión
+            y alertar a los habitantes de manera inmediata. Asimismo, el sistema trasciende la alerta local al 
+            incorporar el <strong>envío automático de correos electónicos </strong>a uno o varios destinatarios
+            seleccionados por el usuario, garantizando que el aviso de peligro llegue a los familiares o contactos
+            de emergencia sin importar donde se encuentren. </p> 
+        <p>Aprovechando la versatilidad de la tecnología <strong>Internet de las Cosas (IoT)</strong>, 
+            el proyecto evolucionó para ofrecer una protección más amplia. Además de vigilar la calidad del aire
+            mediante sensores electroquímicos (MQ-2), el sistema integra funciones de seguridad personal, como un
+            botón de pánico silencioso y alertas visuales y sonoras, haciendo de este sistema, un sistema 
+            adaptable y útil para personas con discapacidad auditiva o visual.</p> 
+        <p>A lo largo de este informe se detallará como SENTECH combina la prevención de tragedias invernales con 
+            la seguridad ciudadana, utilizando microcontroladores y conectividad Wi-Fi para enviar alertas en tiempo 
+            real, garantizando que el hogar sea un entrno realmente seguro.
+        </p> 
+    </section>
+
+    <section id="contenido">
+        <h2>Objetivos</h2>
+        <p>El objetivo general del proyecto es diseñar y construir un sistema de seguridad inteligente
+            basado en microcontroladores que protejan tanto la integridad física del usuario ante 
+            situaciones de violencia o mergencia médica, como la seguridad del hogar ante fugas de 
+            gases tóxicos.</p> <br>
+        <h3>Objetivos específicos:</h3>
+        <dl>
+            <dt><strong>Monitoreo Ambiental:</strong></dt>
+                <dd>detectar la presencia de gases inflamables, tóxicos o humo en el ambiente
+                    en tiempo real utilizando sensores electroquímicos.
+                </dd> <br>
+            
+            <dt><strong>Alerta Inclusiva y Multimodal:</strong></dt>
+                <dd>generar alertas que sean perceptibles tanto auditivamente
+                    (buzzer) como visualmente (luces intermitentes) para garantizar que personas con discapacidad
+                    visual o auditiva puedan percibir la emergencia.
+                </dd> <br>
+            
+            <dt><strong>Conectividad IoT:</strong></dt>
+                <dd>implementar el envío automático de correos electrónicos a múltiples 
+                destinatarios como método de aviso remoto en caso de detección de gases peligrosos o activación del botón de pánico.
+                </dd> <br>
+            
+            <dt><strong>Funcionalidad de Pánico Silencioso:</strong> </dt>
+                   <dd> proveer un mecanismo discreto (botón) que permita
+                    pedir ayuda vía correo electrónico sin alertar al agresor o intruso (sin luces ni sonido).
+                    </dd><br>
+            
+        </dl>
+    </section>
+
+    <section id="contenido">
+        <h2>Materiales:</h2>
+        <p>Para la realización de este prototipo de utilizaron los siguentes componentes
+            electrónicos y herramientas de software:
+        </p> 
+        <dl>
+            <dt><strong>Microcontrolador</strong></dt>
+                <dd>Placa de desarrollo ESP8266 (NodeMCU)</dd> <br>
+            <dt><strong>Sensor de Gases</strong></dt>
+                <dd>Módulo MQ-2</dd> <br>
+            <dt><strong>Módulo Relé de 5v</strong></dt>
+                <dd>Interruptor electromecánico para controlar cargas de alto voltaje</dd> <br>
+            <dt><strong>Foco/Lámpara de 220v</strong></dt>
+                <dd>Actuador visual principal de alta potencia</dd> <br>
+            <dt><strong>Buzzer</strong></dt>
+                <dd>Actuador sonoro para alertas acústicas</dd> <br>
+            <dt><strong>Botón Pulsador</strong></dt>
+                <dd>Dispositivo de entrada para activar el modo pánico</dd> <br>
+            <dt><strong>LED luminoso</strong></dt>
+                <dd>Indicador de control/testigo</dd> <br>
+            <dt><strong>Resistencia 1 kOhm</strong></dt>
+                <dd>Componente pasivo para limitar corriente y evitar que el LED sufra algún daño.</dd> <br>
+            <dt><strong>Software de Programación</strong></dt>
+                <dd>Arduino IDE con librerías ESP8266WiFi y ESP8266SMTP</dd> <br>
+        </dl>
+    </section>
+
+    <section id="contenido">
+        <h2>Marco Teórico y Descripción Técnica</h2>
+
+        <h3>Contexto de la problematica identificada en Argentina</h3>
+        <p>El monóxido de carbono (CO) es un gas altamente tóxico que no tiene color,
+            olor ni sabor, lo que lo hace indectable para los sentidos humanos hasta que es demasiado
+            tarde. Según estadisticas del <strong>Ministerio de Salud de la Nación</strong>, en el país
+            se producen aproximadamente <strong>200 muertes al año</strong> por intoxicación con este gas,
+            y se registran cerca de <strong>4,000 casos de intoxicación</strong> que requieren atención médica.
+            Estas cifras son especialmente alarmantes durante los meses de invierno, cuando el uso de
+            estufas, calefactores y otros dispositivos de calefacción aumenta significativamente.
+            <br>
+            SENTECH busca reducir estas cifras actuando como un "sentido artificial" que alerta a los ocupantes
+            de la vivienda ante la mínima presencia de gases de combustión incompleta, permitiendo la evacuación 
+            y ventilación a tiempo. Simultaneamente, el sistema cumple una función vital de respaldo:
+            <strong>envía un correo electrónico automático a un contacto de emergencia</strong> que se encuentre
+            fuera del hogar. Esta caracteristica asegura que, incluso si los habitantes ya están afectados por el gas
+            o inconscientes y no pueden autoevacuarse, un familiar o tercero sea notificado remotamente para enviar
+            ayuda de inmediato.
+        </p>
+
+        <h3>Descripción de los elementos</h3>
+        <p>Para la implementación de SENTECH, se seleccionaron componentes basándose en crtiterios
+            de eficiencia y disponibilidad. </p>
+            <br>
+            <ol>
+                <li><dl><strong>Microcontrolador: ESP8266 Node MCU</strong></dl> <br>
+                <dt>¿Qué es un microcontrolador?</dt>
+                    <dd>Un microcontrolador es un circuito integrado con capacidad de ser programado varias veces,
+                        en función del código que tenga grabado en su memoria, para ejecutar las distintas órdenes
+                        que le indiquemos. Se componen principalmente de tres bloques: la unidad central de procesamiento 
+                        (CPU en inglés), la memoria y los periféricos de entrada o salida.</dd> <br>
+                <dt>Características</dt>
+                    <dd>Este microcontrolador fabricado por la compañía Espressif incorpora además de los tres módulos 
+                        básicos de un controlador, un módulo Wi-Fi para comunicación. En las placas en las que se coloca 
+                        este chip, vienen impresas unas antenas de manera compacta para poder utilizar dicha comunicación.
+                        Esto convierte a las versioens del ESP8266 en un dispositivo pequeño, pero batante potente.
+                        Su CPU está basado en procesador de 32 bits y su chip Wi-Fi integra gestión de pila TCP/IP, lo cual 
+                        convierte al ESP8266 en un microcontrolador con conectividad Wi-Fi completa.
+                        La memoria de este microcontrolador es una memoria Flash cuyo tamaño varía desde 1MiB (1MiB = 1,04858 MB) 
+                        hasta 8MiB, aunque en el mercado se pueden encontrar ESPs de hasta 16MiB de memoria Flash. Dicha memoria 
+                        nos servirá para almacenar tanto el programa que escribamos como para almacenar de forma local cierta información 
+                        como contraseñas de Wi-Fi o algunos datos que consideremos privados.
+                        Sobre los periféricos, el ESP8266 consta de 16 pines GPIO (General Pins Input Output) que podremos utilizar para, 
+                        como su nombre indica, propósito general. Posee además varios protocolos de comunicación como son UART, SPI, I2C, I2S 
+                        y posibilidad de salidas PWM de 10 bits en todos sus pines GPIO.
+                        Su voltaje de operación es de entre 3.0V a 3.6V.</dd> <br>
+                </li>
+                <li><dl><strong>Sensor de Gas: Módulo MQ-2</strong></dl> <br>
+                <dt>Características</dt>
+                    <dd>El sensor de gas MQ2 es analógico y  se utiliza en la detección de fugas de gas de equipos en los mercados de consumo y la industria.
+                        También este sensor es adecuado para la detección de gas LP, i-butano, propano, metano, alcohol, hidrógeno y monóxido de carbono. 
+                        Incluso tiene una alta sensibilidad y un tiempo de respuesta rápido. Finalmente la sensibilidad puede ser ajustada por un potenciómetro.
+                        Este pequeño sensor de gas detecta la presencia de gas combustible y humo en concentraciones de 300 a 10.000 ppm. Incorpora una sencilla 
+                        interfaz de tensión analógica que únicamente requiere un pin de entrada analógica del microcontrolador.
+                        Con la conexión de cinco voltios en los pines el sensor se mantiene lo suficientemente caliente para que funcione correctamente. 
+                        Solo se tiene que conectar 5V (vin) para que el sensor emita tensión. La sensibilidad del detector se ajusta con una carga resistiva 
+                        entre los pines de salida y tierra.</dd><br>
+                <dt>Principio de funcionamiento</dt>
+                    <dd>El núcleo de Dióxido de Estaño (SnO2) se calienta mediante una bobina interna.
+                        Al entrar en contacto con gases combustibles, se produce una reacción química que disminuye la resistencia
+                        eléctrica del sensor, aumentando el voltaje de salida hacia el microcontrolador.</dd><br>
+                <dt>Calibración y variables ambientales</dt>
+                        <dd>Para determinar el punto de disparo de la alarma, se realizó un ajuste experimental considerando las condiciones climáticas
+                            de la ciudad de la ciudad donde diseñamos el proyecto (San Ramón de la Nueva Orán). Dado que esta región se caracteriza por 
+                            elevadas temperaturas y altos índices de humedad, factores físicos que aumentan naturalmente la condictividad del sensor MQ-2, 
+                            fue necesario establecer un <strong>umbral de seguridad de 550.</strong> Este valor permite discriminar eficazmente entre la 
+                            saturación ambiental propia del clima local y una fuga real de gas, garantizando la eliminación de falsos positivos que ocurrirían
+                            con una calibración estandar en días calurosos. </dd> <br>
+                </li>
+                <li><dl><strong>Módulo Relé de 5v</strong></dl> <br>
+                <dt>Características</dt>
+                    <dd>Un módulo de relé es monocanal o multicanal que funciona con un voltaje de activación de bajo nivel de 5V CC. 
+                        El voltaje de entrada puede provenir de cualquier microcontrolador o chip lógico que emita una señal digital.
+                        Como la mayoría de los otros relés, el módulo de relé es un interruptor electromagnético operado eléctricamente que se puede usar 
+                        para encender o apagar un circuito. Consta de dos partes: el propio relé y el módulo de control.</dd><br>
+                    <dt>Funcionamiento</dt>
+                    <dd>El módulo de relé de 5V requiere una señal de 5V enviada desde un microcontrolador o sensor para activar el interruptor. Su funcionamiento 
+                        es muy sencillo. Cuando el pin de entrada es ALTO, el relé se enciende, y cuando la entrada es BAJA, se apaga.
+                            <ul>
+                                <li>El relé se activa mediante una señal de activación de bajo nivel aplicada a su pin IN1. Cuando se aplica la señal de disparo, 
+                                    el transistor se enciende y amplifica la señal.</li>
+                                <li>Esto hace que el relé se encienda y conecte la carga al pin NO o NC. El LED se encenderá para indicar que el relé está ENCENDIDO.</li>
+                                <li>Cuando se elimina la señal de activación, el transistor se apaga y el relé se apaga. Luego, la carga se desconecta del pin NO o NC. 
+                                    El LED se apagará para indicar que el relé está APAGADO.</li>
+                            </ul>
+                        </dd> <br>
+                </li>
+                <li><dl><strong>Actuadores de señalización</strong></dl> <br>
+                    <dt><strong>Buzzer pasivo</strong></dt>
+                        <dd>Su funcionamiento se basa en el efecto piezoeléctrico. El componente principal es un cristal piezoeléctrico o cerámica que 
+                            se deforma mecánicamente cuando se aplica un voltaje eléctrico a sus terminales. Esta deformación produce ondas de presión 
+                            en el aire que percibimos como sonido. Decidí utilizar este tipo de buzzer ya que su sonido
+                            depende del software, el cual me permite controlar el tono exacto de la alarma. En este caso se programó para emitir una frecuencia constante y 
+                            penetrante (1000hz) durante el estado de emergencia.
+                        </dd> <br>
+                    <dt><strong>Lámpara 220v y LED Testigo</strong></dt>
+                        <dd>Actúan como señalización visual. Se programan con un patrón intermitente para captar la atención visual periférica.</dd>
+                </li> <br>
+                <li><dl><strong> Protocolo de comunicación: SMTP y funcionamiento autónomo</strong></dl>
+                    <p>El sistema SENTECH utiliza el estándar <strong> SMTP (Simple Mail Transfer Protocol)</strong> para la gestión de alertas. A diferencia de los protocolos
+                        de recepción (como IMAP o POP3), el SMTP es un protocolo de tipo "push" diseñado exclusivamente para la transferencia de correo saliente.</p> <br>
+                    <ol>El funcionamiento del sistema de divide en tres etapas lógicas:
+                        <li><strong>Handshake y autenticación:</strong> al detonarse una alarma, el microcontrolador inicia una conexión TCP con el servidor 
+                        <em>smtp.gmail.com</em> a través de los puertos seguros <strong>465 (SSL)</strong> o <strong>587 (TLS)</strong>. El sistema se identifica
+                        y valida su acceso mediante una "Contraseña de Aplicación" cifrada, garantizando que el dispositivo tenga permisos de envío sin comprometer la seguridad
+                        de la cuenta principal de Google.</li>    
+                        <li><strong>Transacción de datos:</strong> una vez establecido el túnel seguro, el microcontrolador envía los comandos de cabecera (MAIL FROM, 
+                        RCPT TO) seguidos por el cuerpo del mensaje (DATA).</li>
+                        <li><strong>Independencia del cliente:</strong> al integrar un cliente SMTP ligero dentro del firmware del ESP8266, el sistema elimina la necesidad de servidores
+                        intermedios o aplicaciones de terceros. El dispositivo "habla" el mismo idioma que los servidores de correo mundiales, lo que asegura una entrega
+                        rápida y confiable de la alerta.</li>
+                        </ol>
+                 </li>
+            </ol>
+        <h3>Lógica de diagnóstico y funcionamiento</h3>
+        <p>Una innovación del diseño es la <strong>Lógica de Diagnóstico.</strong> Se conectó un LED (luz testigo)
+        en paralelo lógico con el relé del foco de 220V.
+        Si ante una prueba o alarma el LED testigo parpadea pero el foco de 220V no enciende, el usuario puede deducir
+        inmediatamente que hay una falla física en el foco (quemado) o en la instalación de potencia, descartando errores de 
+        software.</p>
+
+        <ol><h4>Estados del sistema:</h4>
+            <li><strong>Estado de alarma (GAS > 550):</strong>
+                <ul>
+                    <li><strong>(PRIORIDAD)</strong> Envía email: "Alerta: Fuga de gas detectada. Ambiente peligroso. Por favor envíe ayuda"</li>
+                    <li>Activa el <strong>buzzer</strong> generando un tono continuo mediante software.</li>
+                    <li>Activa el <strong>Relé (foco 220V)</strong> y el <strong>LED testigo</strong> en patron intermitente.</li>
+                </ul>
+            </li> <br>
+            <li><strong>Estado de pánico (botón presionado):</strong>
+                <ul>
+                    <li>Mantiene <strong>apagados</strong> todos los actuadores (silencio total).</li>
+                    <li>Envía email inmediato: "Alerta: botón de pánico presionado. Se necesita ayuda"</li>
+                </ul>
+
+            </li> <br>
+
+        </ol>
+
+
+    </section>
+
+    <section id="contenido">
+        <h2>Esquema de conexión</h2>
+        <img src="imagenes\circuito.png" alt ="DiagramaCircuito" width="300" height="600">
+        <p style="text-align: center;font-size: 15px;">Diagrama del circuito realizado en el simulador Wokwi</p>
+
+        <h2>Código del programa</h2>
+        <iframe src="imagenes\SENTECHalarma.pdf" width="800" height="800"></iframe>
+        <p style="text-align: center;font-size: 15px;">Código utilizado en la programación del ESP8266</p>
+
+
+    </section>
+
+    <section id="contenido">
+        <h2>Conclusión</h2>
+        <p>El desarrollo del sistema SENTECH permitio integrar con éxito la tecnología del microcontrolador <strong>ESP8266</strong>
+        y el sensor de gas <strong>MQ-2</strong> para crear una solución de seguridad funcional, accesible y adaptada al entorno local.
+        A través de la implementación de este prototipo, se alcanzaron las siguientes conclusiones clave:</p>
+        <ol>
+            <li><strong>Adaptabilidad ambiental y calibración:</strong> uno de los desafíos técnicos más importantes fue la
+            calibración del sensor MQ-2. Se determinó experimentalmente un <strong>umbral de 550</strong> como el punto de referencia
+            ideal para distinguir entre un estado seguro y una alerta de peligro. Este valor responde a la necesidad de evitar falsos positivos
+            provocados por la humedad y temperatura específicas de la ciudad, demostrando la importancia de la calibración contextualizada.</li>
+            <li><strong>Inclusividad mediante alertas multimodales:</strong> SENTECH cumple eficazmente con su objetivo de ser inclusivo. La activación
+            simultaneamente del buzzer en tono continuo y las luces en patrón intermitente garantiza que la alerta sea perceptible tanto para personas 
+            con discapacidad visual como auditiva.</li>
+            <li><strong>Arquitectura IoT y conectividad</strong> el sistema se consolida como una solución <strong>IoT (Internet de las cosas)</strong> al aprovechar la capacidad
+            de conexión Wi-Fi del ESPP8266. Esto no solo permite el procesamiento local de datos, sino que habilita al dispositivo para integrarse a la red
+            inalámbrica, permitiendo la gestión inteligente de las alertas y validando la viabilidad de sistemas de seguridad conectados de bajo costo.</li>
+        </ol>
+        <h3>Mejoras futuras:</h3>
+        <ol>
+            <li>Aprovechando la conectividad WiFi del módulo ESP8266, podriamos integrar un BOT que envíe una notificación de alerta al teléfono
+                celular del usuario o de un familiar responsable cuando se detecte una fuga de gas.
+            </li>
+            <li>Garantizar la autonomía energética, incorporando un módulo de carga y una batería de litio.</li>
+            <li>Añadir un sensor de temperatura y humedad que nos ayude a calibrar el sensor MQ-2 en tiempo real según la humedad del ambiente.</li>
+            <li>Encapsulado: diseñar e imprimir una carcasa ignífuga con rejillas de ventilación optimizadas para el flujo de aire hacia el sensor.</li>
+        </ol>
+
+        <p>En resumen, con SENTECH busqué demostrar que la seguridad no deberia ser un lujo, y que no necesitamos grandes presupuestos para resolver problemas 
+            complejos. Para mi, este proyecto valida que la programación y la electrónica podrian formar parte fundamental de la vida cotidiana, y que la tecnología IoT
+            puede también ayudarnos a proteger a quienes más queremos.
+        </p>
+    </section>
+
+    <section id="contenido">
+        <h3>Bibliografía</h3>
+        <ul>
+            <li>https://atganalytical.com/microcontrolador-esp8266-caracteristicas-y-programacion/</li>
+            <li>https://www.argentina.gob.ar/salud/monoxido-de-carbono</li>
+            <li>https://www.incucai.gov.ar/</li>
+            <li>https://ditecnomakers.com/sensor-de-gas-mq2-y-arduino/</li>
+            <li>https://www.geya.net/es/5v-relay-module-how-it-works-and-application/</li>
+        </ul>
+    </section>
+
+
+
+</body>
+</html>

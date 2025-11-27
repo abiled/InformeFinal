@@ -1,0 +1,110 @@
+
+
+body {
+    /* Aplicamos el color aquí para no repetirlo en cada etiqueta */
+    color: darkblue;
+    font-family: Arial, sans-serif; /* Buena práctica agregar una fuente */
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces y decoraciones generales */
+a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+/* Títulos Generales */
+h1, h2, h3 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+h1 { font-size: 50px; }
+h2 { font-size: 35px; text-decoration: underline; }
+h3 { font-size: 25px; text-decoration: underline; }
+
+/* Párrafos y Listas */
+p, ul, li, dl, ol, dd {
+    font-size: 20px; /* Tamaño base */
+}
+
+dt {
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* --- SECCIONES ESPECÍFICAS --- */
+
+#portada {
+    text-align: center;
+    padding: 20px;
+}
+
+#titulo {
+    text-align: center;
+    font-size: 50px;
+    text-decoration: solid underline;
+    margin-bottom: 20px;
+}
+
+#contenido {
+    /* En PC mantenemos tus márgenes anchos */
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    line-height: 1.6; /* Hace que el texto sea más fácil de leer */
+}
+
+/* --- IMÁGENES Y VIDEO --- */
+img, video {
+    display: block;
+    margin: 20px auto; /* Un poco de espacio vertical */
+    /* En PC ocuparán el 50%, pero nunca más del 100% del ancho disponible */
+    width: 70%; 
+    max-width: 120%; 
+    height: auto; /* Mantiene la proporción correcta */
+}
+iframe {
+    display: block;
+    margin: 20px auto; /* Un poco de espacio vertical */
+    /* En PC ocuparán el 50%, pero nunca más del 100% del ancho disponible */
+    width: 70%; 
+    max-width: 120%; 
+    height: 600px; 
+}
+
+
+
+/* Si la pantalla es menor a 768px (Tablets y Celulares) */
+@media (max-width: 768px) {
+
+    /* 1. Aprovechamos más el ancho de la pantalla */
+    #contenido {
+        margin-left: 5%;  /* Reducimos márgenes laterales */
+        margin-right: 5%;
+    }
+
+    /* 2. Las imágenes crecen para verse bien en pantallas chicas */
+    img, video, iframe {
+        width: 90%; /* En celular ocupan casi todo el ancho */
+    }
+
+    /* 3. Achicamos los textos gigantes para que no rompan el diseño */
+    h1, #titulo {
+        font-size: 32px; /* Reducido de 50px */
+    }
+
+    h2 {
+        font-size: 26px; /* Reducido de 35px */
+    }
+    
+    h3 {
+        font-size: 22px;
+    }
+
+    p, li, dd, dt {
+        font-size: 18px; /* Ligeramente más pequeño para lectura móvil */
+    }
+}
